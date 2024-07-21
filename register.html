@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="register.css">
+    <link rel="shortcut icon" href="favicon_io/android-chrome-512x512.png" type="image/x-icon">
+    <title>Registro</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a href="index.html">
+                <img class="header__logo--img" src="imagenes/Logo_1.png" alt="descripcion">
+            </a>
+        </div>
+        <div class="header__menu">
+            <nav class="menu">
+                <ul class="menu__list">
+                    <li class="menu__list--item"><a class="menu__list--link" href="index.html">Inicio</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="aboutus.html">Nosotros</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="brands.html">Marcas</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="contact.html">Contacto</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="register.html">Registro</a></li>
+                </ul>
+            </nav>
+        </div>       
+    </header>
+
+    <main class="main">
+
+        <div class="register__header">
+            <h1 class="register__title">Registrate</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat facere atque quae numquam tempore. Quisquam, doloribus at. Reprehenderit aliquid illo dolore, quam consectetur hic iste nesciunt omnis excepturi voluptatem! Ipsam.</p>
+        </div>
+        
+        <!--Bloque: Registro-->
+        <div class="register">
+    
+        <!-- Elemento: register__form -->
+            <form class="register">
+                <!--Elemento: register__fieldset Títulos -->
+                <fieldset class="register__fieldset">
+                    <!--<legend class="register__legend">Información de contacto</legend>-->
+                    <h2 class="register__subtitle"> Lorem ipsum dolor, sit amet consectetur</h2>
+                    <img class="register__subtitle" src="imagenes/Logo_1.png">
+    
+                    <!--Elemento: register__field Nombre -->
+                    <div class="register__field">
+                        <label class="register__label" for="FirstName">Nombre *</label>
+                        <input class="register__input" type="text" name="FirstNameInput" id="name" minlength="2" maxlength="15" required>
+                    </div>
+    
+                    <!--Elemento: register__field Apellido-->
+                    <div class="register__field">
+                        <label class="register__label" for="LastName">Apellido *</label>
+                        <input class="register__input" type="text" name="LastNameInput" id="surname" minlength="2" maxlength="15" required>
+                    </div>
+    
+                    <!--Elemento: register__field Email-->
+                    <div class="register__field">
+                        <label class="register__label" for="Email">Email *</label>
+                        <input class="register__input" type="email" name="EmailInput" id="email" required>
+                    </div>
+                    
+                    <!--Elemento: register__field Teléfono-->
+                    <div class="register__field">
+                        <label class="register__label" for="Phone">Teléfono</label>
+                        <input class="register__input" type="number" name="PhoneInput" id="phone" min="8" max="999999999999" placeholder="(+IndicadorPais) Telefono">
+                    </div>
+    
+                    <!--Elemento: register__field Username-->
+                    <div class="register__field">
+                        <label class="register__label" for="username">Nombre de Usuario *</label>
+                        <input class="register__input" type="text" name="UserNameInput" id="username" minlength="0" maxlength="999999999999" required>
+                    </div>
+
+                    <!--Elemento: Register__field Password-->
+                    <div class="register__field">
+                        <label class="register__label" for="password">Crea una Contraseña *</label>
+                        <input class="register__input" type="password" name="PasswordInput" id="password" minlength="8" maxlength="999999999999999" required>
+                        <button class="show-password">Mostrar</button>
+                    </div>
+
+                    <!--Elemento: Register__field Password-->
+                    <div class="register__field">
+                        <label class="register__label" for="passwordConfirm">Confirma la Contraseña *</label>
+                        <input class="register__input" type="password" name="PasswordConfrimInput" id="password" minlength="8" maxlength="999999999999999" required>
+                        <button class="show-password">Mostrar</button>
+                    </div>
+    
+                    <!--Elemento: register__field Submit button-->
+                    <input type="submit" class="register__button">
+                </fieldset>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__socialmedia">
+            <div class="footer__socialmedia--titleContainer">
+                <h3 class="footer__socialmedia--title">Siguenos en nuestras redes sociales</h3>
+            </div>
+            <div class="footer__socialmedia--imagesContainer">
+                <a class="footer__socialmedia--icon" href="https://www.facebook.com">
+                    <img class="footer__socialmedia--image" src="imagenes/facebook.svg" alt="Facebook">
+                </a>
+                <a class="footer__socialmedia--icon" href="https://www.instagram.com">
+                    <img class="footer__socialmedia--image" src="imagenes/instagram.svg" alt="Instagram">
+                </a>
+            </div>           
+        </div>
+    </footer>
+</body>
+</html>
