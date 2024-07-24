@@ -1,3 +1,4 @@
+//El código se ejecuta solo después de que todo el DOM haya sido completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
     let bannerImages = [
         {
@@ -27,16 +28,18 @@ document.addEventListener('DOMContentLoaded', function() {
         },
     ]
 
-    /* Variable creation */
+    // Creacion de variables 
     let atras = document.getElementById('atras');
     let adelante = document.getElementById('adelante');
-    let imagen = document.getElementById('img');
+    let imagen = document.getElementById('bannerImg');
     let puntos = document.getElementById('puntos');
     let texto = document.getElementById('bannerText');
     let actual = 0;
 
+    // Inicialización del Carrusel
     posicionCarrusel();
 
+    //  Ajuste del índice actual cuando se hace clic en los botones de "atrás" y "adelante"
     atras.addEventListener('click', function() {
         actual -= 1;
         if (actual == -1) {
@@ -53,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         actualizarCarrusel();
     });
 
+    // Actualiza la imagen y el texto del carrusel con la información de la imagen actual
     function actualizarCarrusel() {
         imagen.innerHTML = `<img class="main__banner2--carPhoto" src="${bannerImages[actual].url}" alt="imagen carrusel" loading="lazy">`;
         texto.innerHTML = `
@@ -62,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         posicionCarrusel();
     }
 
+    // Negrita al punto de navegacion donde va la imagen seleccionada
     function posicionCarrusel() {
         puntos.innerHTML = "";
         for (let i = 0; i < bannerImages.length; i++) {

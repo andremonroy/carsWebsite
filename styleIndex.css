@@ -1,82 +1,110 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 body {
-    /*font-family: sans-serif;
-    margin: 0;*/
-
-
-    /*background-color: #eafdfc;*/
-    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    /*border: 4px solid rgb(236, 18, 127);*/
 }
 
 /*-------- BARRA DE NAVEGACION - MENU --------*/
-.header{
+/* Estilos para el header y el menú */
+.header {
+    /*border: 4px solid rgb(225, 246, 35);*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
     background-color: #1B1B1B;
-    text-align: right;
-    color: #ffff;
-    font-size: 1,5em;
-    font-weight: 600;
+}
 
+.header__logo--img {
+    height: 50px;
+}
+
+.header__menu {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    align-items: center;
 }
 
-.header__logo{
-    text-align: left;
-}
-
-.header__logo--img{
-    width: 100px;
-}
-
-.menu__list{
+.menu {
     display: flex;
-    flex-wrap: nowrap;
-    /* gap: 20px;*/
+    list-style: none;
+}
+
+.menu__list {
+    display: flex;
+    gap: 20px;
     list-style-type: none;
-    align-content: end;   
 }
 
-.menu__list--link{
+.menu__list--item {
+    position: relative;
+}
+
+.menu__list--link {
     text-decoration: none;
-    color: #ffff;
-    padding: 10px;
-    margin: 8px;
-    border-radius: 5px;
-    transition: background-color 0.6s; border-radius: 0.6s;
-}
-.menu__list--link:hover{
-    background-color: #F54703;
-    color: #1B1B1B;
-    border-radius: 10px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
+.menu__list--link:hover {
+    background-color: #F54703;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+/* Para dispositivos móviles quitar el carrusel de imagenes */
+@media (max-width: 768px) {
+    /* Esto se elimina para reemplazarlo por menu hamburguesa
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .menu__list {
+        flex-direction: column;
+        gap: 10px;
+    }
+    */
+    .main__banner2 {
+        display: none !important;
+    }
+}
 
 /*-------- MAIN --------*/
 
 .flex-container{
+    /*border: 4px solid rgb(35, 246, 74);*/
+
     display: flex;
     overflow: hidden;
-    padding: 0 40px 0 40px;
+    padding: 20px 40px 20px 40px;
     text-align: center;
     height: auto;
-    margin: 3%;
+    width: 100%;
+    /*margin: 3%;*/
 }
 
 /*Banner imagenes con javascript*/
+.main{
+    /*border: 4px solid rgb(35, 236, 246);*/
 
-.main{ /*body*/
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    /*height: 100vh; */
-    height: auto;
+
+    /*Ver si estos funcionan:*/
+    /*width: 100%;*/
+    /*height: 100vh; 
+    height: auto;*/
 }
 
 .main__banner2{
@@ -85,7 +113,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     width: 100vw;
-    height: 100vh;
+    /*height: 100vh;*/
 }
 
 .main__banner2--imagesAndButtons{ /*carrusel*/
@@ -100,12 +128,12 @@ body {
     height: 80vh;*/
 }
 
+/*Pone la mano sobre los iconos*/
 .main__banner2--atras,
 .main__banner2--adelante{
     cursor: pointer;
 }
 
-/*imagenes*/
 .main__banner2--container{
     display: flex;
     flex-direction: column;
@@ -113,7 +141,6 @@ body {
     justify-content: end;
 }
 
-/*img*/
 .main__banner2--carPhoto{
     box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.85);
     height: 576px;
@@ -124,7 +151,6 @@ body {
     filter: saturate(175%);
 }
 
-/*texto*/
 .main__banner2--text{
     display: flex;
     overflow: hidden;
@@ -155,7 +181,6 @@ body {
     font-weight: 300;
 }
 
-/*imagenes*/ /*texto*/
 .main__banner2--container .main__banner2--text{
     width: 600px;
     height: 100px;
@@ -200,19 +225,27 @@ body {
 /* Fin Banner imagenes con javascript*/
 
 
-.main__titulo h1{
+.main__titulo--texto{
     justify-content: center;
+    padding: 10px 8vw 10px 8vw;
 }
 
 /*---- GALERIA DE CARROS ----*/
 .main__galeria{
     gap: 20px;
-    padding: 10px;
     justify-content: start;
     display: flex;
     overflow-x: auto;
+    padding: 0px 40px 40px 40px;
+
 }
 
+.main__galeria--photo{
+    height: 20vw;
+    /*width: 100%;*/
+}
+
+/*Agregar descripcion a cada carro*/
 .main__galeria--carContainer{
     border: 2px solid rgba(33, 225, 228, 0.94);
     display: flex;
@@ -221,7 +254,6 @@ body {
     flex: 0 0 auto; /*Contenedor mantiene tamaño definido por min-width/height, sin crecer ni encogerse*/
     min-width: 15vw;
     /*width: calc((100% - 60px) / 4); /* Change the number of visible items */
-
 }
 
 .main__galeria--carImageContainer{
@@ -242,24 +274,21 @@ body {
 .main__galeria--carInfoContainer h5 {
     margin: 5px 10px;
 }
+/*Fin Segmento Agregar descripcion a cada carro*/
 
-.main__galeria--photo{
-    height: 20vw;
-    width: 100%;
-}
+
+
 
 /*---- Listado de marcas ----*/
 
 .main__brands{
-    padding: 20px 0 20px 0 ;
+    padding: 0px 40px 40px 40px;
 }
-
-/* arriba | derecha | abajo | izquierda */
 
 .main__brands--photo{
     height: 10vw;
-    width: 100%;
-    margin: 5px;
+    /*width: 100%;
+    margin: 5px;*/
 }
 
 /*-------- FOOTER --------*/
@@ -296,4 +325,72 @@ body {
 
 .footer__info a:hover {
     text-decoration: underline;
+}
+
+
+/*-----MENU HAMBURGUESA------*/
+
+.abrir__menu{
+    display: none;
+    background-color: #1B1B1B;
+    color: #fff;
+    cursor: pointer;
+    
+}
+
+.cerrar__menu{
+    display: none;
+}
+
+/*Menu hamburguesa*/
+@media screen and (max-width: 768px){
+   
+    .abrir__menu {
+        display: block;
+        font-size: 1.5rem;
+        border: 0;
+    }
+
+    .cerrar__menu{
+        display: block;
+        font-size: 2rem;
+        border: 0;
+        background-color: #1c1c1c;
+        color: #ececec;
+        cursor: pointer;
+    }
+
+    .nav{
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1.2rem;
+        position: absolute;
+        padding: 1rem;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #1c1c1c;
+        transition: ease-in-out 0.5s ease;
+    }
+
+    .nav.visible{
+        visibility: visible;
+        
+    }
+
+    .nav-list{
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 3rem;
+    
+
+    }
+
+    .nav-list li a{
+        color: #ececec
+    }
+
+    
 }

@@ -1,4 +1,6 @@
-/* Estilos del formulario de Registro */
+/*Estilos Header*/
+
+/*Fin estilos Header*/
 
 /* Header title */
 .register__header{
@@ -7,6 +9,12 @@
 
 .register__title {
     color: #242222;
+}
+
+/*Title*/
+.main__titulo--texto{
+    justify-content: center;
+    padding: 10px 8vw 10px 8vw;
 }
 
 /* register form container */
@@ -33,6 +41,7 @@
     border: 2px solid #444;
     border-radius: 6px;
     padding: 10px;
+    align-items: center;
 }
 
 /* Legend */
@@ -71,8 +80,8 @@
     color: #ccc;
 }
 
-/* Inputs and textareas */
-.register__input {
+/* Inputs */
+.register__input, .register__input-1 {
     width: 100%;
     padding: 10px;
     border: 1px solid #444;
@@ -80,27 +89,39 @@
     background-color: #fff;
     color: #939396;
     box-sizing: border-box;
+    display: flex;
 }
 
-.register__input:focus {
+.register__input:focus, .register__input-1:focus {
     border-color: #007bff;
     border-color: #F54703;
     outline: none;
 }
 
-/* Show button*/
-.show-password {
-    position: relative;
-    width: 15%;
-    background-color: #F54703;
-    color: white;
-    border: none;
+.register__label--show {
+    display: flex;
+    flex-direction: row;
     border-radius: 4px;
-    font-size: 0.9em;
-    cursor: pointer;
-    text-align: center;
+    background-color: #fff;
+    color: #939396;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
+/* Show button*/
+.bi1, .bi2 {
+    font-size: 1.7em;
+    color: #F54703;
+    cursor: pointer;
+    position: absolute;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.bi1:hover, .bi2:hover{
+    color: #eb5e28;
+}
 
 /* Submit button */
 .register__button {
@@ -120,8 +141,17 @@
     background-color: #eb5e28;
 }
 
+/* Register Queries */
+@media (max-width:768px) {
+    .main {
+        padding: 0px 15px;
+    }
+}
+
 /* Redes sociales */
 .footer{
-    margin-top: 10px;
+    margin-top: 20px;
 }
+
+
 
